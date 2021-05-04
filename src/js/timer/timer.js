@@ -1,5 +1,5 @@
-// import {Howl, Howler} from './howler.js';
-//import soundTrack from './assets/sounds/sound3.wav';
+import { Howl } from 'howler';
+import soundTrack from '../../assets/sounds/sound3.wav';
 
 let timeInputEl = document.getElementById("timeInput");
 let startBtn = document.getElementById("start");
@@ -10,11 +10,12 @@ let timeIsOverEl = document.getElementById("timeIsOver");
 let intervalId = null;
 
 const sound = new Howl({
-    src: ['./assets/sounds/sound3.wav']
-    //src: [soundTrack]
+    // src: ['./assets/sounds/sound3.wav']
+    src: [soundTrack]
 });
 
 const startHandler = (event) => {
+    startBtn.disabled = true;
     timeIsOverEl.innerText = "";
     let timeSet = timeInputEl.value;
     timeLeftEl.innerText = timeSet;
@@ -37,6 +38,7 @@ const startHandler = (event) => {
 startBtn.addEventListener('click', startHandler);
 
 const stopHandler = (event) => {
+    startBtn.disabled = false;
     clearInterval(intervalId);
     timeIsOverEl.innerHTML = `the timer was stopped. Press <i>Start</i> to resume the countdown`;
     sound.stop();

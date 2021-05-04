@@ -4,11 +4,32 @@
   "description": "simple dates calculator and timer",
   "main": "main.js",
   "scripts": {
+    "serve": "webpack serve --mode=development",
+    "dev": "webpack --mode=development",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nathan Minaev",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "howler": "^2.2.1",
+    "luxon": "^1.26.0"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "parcel": "*",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

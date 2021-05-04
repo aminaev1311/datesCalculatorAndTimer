@@ -1,4 +1,4 @@
-import {DateTime} from "./luxon.js";
+import {DateTime} from "luxon";
 
 export const calculateDatesDiff =  (date1, date2) =>
     DateTime.fromISO(date1).diff( DateTime.fromISO(date2), ['years', 'months', 'days'] ).values;
